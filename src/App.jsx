@@ -6,6 +6,7 @@ import {
 
 // routes
 import Dashboard, { dashboardLoader } from "./pages/Dashboard";
+import Error from "./pages/Error";
 
 const router = createBrowserRouter([
   {
@@ -14,9 +15,9 @@ const router = createBrowserRouter([
     loader: dashboardLoader, // load this data - from the function dashboardLoader()
   },
   {
-    path: "/about",
-    element: <h1>about</h1>
-  },
+    path: "*", // if no path that is not the paths listed above is show this
+    element: <Error />
+  }
 ]);
 
 function App() {
