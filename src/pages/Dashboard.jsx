@@ -5,16 +5,17 @@ import { useLoaderData } from "react-router-dom";
 import { fetchData } from "../helpers"
 
 // loader
-export function dashboardLoader() { // helper function
+export function dashboardLoader() { // helper function fetches data
     const userName = fetchData("userName");
-    return { userName }
+    return { userName } // returns in object
 }
 
 const Dashboard = () => {
-    const { userName } = useLoaderData()
+    const { userName } = useLoaderData() // custom hook coming in from loader function
 
     return (
         <div>
+            <h1>{userName}</h1>
             Dashboard
         </div>
     )
