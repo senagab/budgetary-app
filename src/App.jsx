@@ -4,6 +4,9 @@ import {
   RouterProvider,
 } from "react-router-dom";
 
+// Layouts
+import Main, { mainLoader } from "./layouts/Main";
+
 // routes
 import Dashboard, { dashboardLoader } from "./pages/Dashboard";
 import Error from "./pages/Error";
@@ -11,13 +14,17 @@ import Error from "./pages/Error";
 const router = createBrowserRouter([
   {
     path: "/", // when this path is met
-    element: <Dashboard />, // this element will be shown
-    loader: dashboardLoader, // load this data - from the function dashboardLoader()
+    element: <Main />, // this element will be shown
+    loader: mainLoader, // load this data - from the function dashboardLoader()
+    errorElement: <Error />,
+    children: [
+      {
+        index: true, //  same as path: "/"
+        element: <Dashboard />, // this element will be shown
+        loader: dashboardLoader, // load this data - from the function dashboardLoader()
+      }
+    ]
   },
-  {
-    path: "*", // if no path that is not the paths listed above is show this
-    element: <Error />
-  }
 ]);
 
 function App() {
