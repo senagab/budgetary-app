@@ -13,6 +13,13 @@ export function dashboardLoader() { // helper function fetches data
     return { userName } // returns in object
 }
 
+// action
+export async function dashboardAction({request}){
+    const data = await request.formData();
+    const formData = Object.fromEntries(data)
+    console.log("~ dashboardAction ~ formData", formData)
+}
+
 const Dashboard = () => {
     const { userName } = useLoaderData() // custom hook coming in from loader function
 
