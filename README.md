@@ -3,6 +3,7 @@
 <p align="left">
  <img src="https://img.shields.io/badge/heroicons-v2.2.0-e44849?labelColor=black&logo=heroicons">
  <img src="https://img.shields.io/badge/toastiy-v11.0.5-blue?labelColor=black&logo=toastiy">
+ <img src="https://img.shields.io/badge/reactrouterdom-v6.8.0-blue?labelColor=green&logo=reactrouterdom">
 </p>
 
 ## Overview
