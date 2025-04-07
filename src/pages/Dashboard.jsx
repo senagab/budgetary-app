@@ -18,6 +18,7 @@ export async function dashboardAction({request}){
     const data = await request.formData();
     const formData = Object.fromEntries(data)
     console.log("~ dashboardAction ~ formData", formData)
+    localStorage.setItem("userName", JSON.stringify(formData.userName)) // set the userName in local storage
 }
 
 const Dashboard = () => {
