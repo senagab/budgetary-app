@@ -7,6 +7,9 @@ import Intro from "../components/Intro";
 // helper functions
 import { fetchData } from "../helpers"
 
+// library imports
+import { toast } from "react-toastify";
+
 // loader
 export function dashboardLoader() { // helper function fetches data
     const userName = fetchData("userName");
@@ -18,7 +21,13 @@ export async function dashboardAction({request}){
     const data = await request.formData();
     const formData = Object.fromEntries(data)
     console.log("~ dashboardAction ~ formData", formData)
-    localStorage.setItem("userName", JSON.stringify(formData.userName)) // set the userName in local storage
+    try {
+        throw new Error("ya done goofed")
+        // localStorage.setItem("userName", JSON.stringify(formData.userName)) // set the userName in local storage
+        // return toast.success(`Welcome, ${formData.userName}`) // show success message
+    } catch (e) {
+        throw new Error("There was a problem creating your account.")
+    }
 }
 
 const Dashboard = () => {
