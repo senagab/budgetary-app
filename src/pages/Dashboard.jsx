@@ -1,15 +1,15 @@
 // react router dom imports
 import { useLoaderData } from "react-router-dom";
 
+// library imports
+import { toast } from "react-toastify";
+
 // components
 import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
 
 // helper functions
 import { fetchData } from "../helpers"
-
-// library imports
-import { toast } from "react-toastify";
 
 // loader
 export function dashboardLoader() { // helper function fetches data
@@ -43,7 +43,6 @@ const Dashboard = () => {
                         {/* {budgets ? () : ()} */}
                         <div className="grid-lg">
                             <div className="flex-lg">
-                                <AddBudgetForm />
                                 <AddBudgetForm />
                             </div>
                         </div>
