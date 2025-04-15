@@ -32,7 +32,9 @@ const AddBudgetForm = () => {
                     required
                     />
                 </div>
-
+                <button type="submit" className="btn btn--dark"></button>
+                <span>Create Budget</span>
+                <CurrencyDollarIcon width={20} />
             </Form>
         </div>
     )
