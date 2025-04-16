@@ -37,8 +37,8 @@ const Dashboard = () => {
     return (
         <>
             {userName ? (
-                <div>
-                    <h1>Welcome back, <span className="accent">{{userName}}</span></h1>
+                <div className="dashboard">
+                    <h1>Welcome back, <span className="accent">{userName}</span></h1>
                     <div className="grid-sm">
                         {/* {budgets ? () : ()} */}
                         <div className="grid-lg">
