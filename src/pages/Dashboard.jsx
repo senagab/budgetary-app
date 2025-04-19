@@ -9,7 +9,7 @@ import Intro from "../components/Intro";
 import AddBudgetForm from "../components/AddBudgetForm";
 
 // helper functions
-import { fetchData } from "../helpers"
+import { createBudget, fetchData } from "../helpers"
 
 // loader
 export function dashboardLoader() { // helper function fetches data
@@ -23,13 +23,27 @@ export async function dashboardAction({request}){
     const data = await request.formData();
     const {_action, ...values} = Object.fromEntries(data)
     
-    // new user submission
+    // use case user submisson
     if(_action === "newUser"){
         try {
             localStorage.setItem("userName", JSON.stringify(values.userName)) // set the userName in local storage
             return toast.success(`Welcome, ${values.userName}`) // show success message
         } catch (e) {
             throw new Error("There was a problem creating your account.")
+        }
+    }
+
+    // use case budget creation
+    if (_action  === "createBudget") {  
+        try {
+            // create budget
+            createBudget({
+                name: values.newBudget,
+                amount: values.newBudgetAmount
+            })
+            return toast.success("budget created successfully!")
+        } catch (e) {
+            throw new Error("There was a problem creating your budget.")
         }
     }
 }
