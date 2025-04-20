@@ -1,3 +1,6 @@
+export const waait = () => new Promise(res => setTimeout(res, Math.random() * 2000)) // helper function to simulate a delay
+
+// colors
 const generateRandomColor = () => {
     const existingBudgetLength = fetchData("budgets")?.length ?? 0; // get existing budgets or empty array
     return `${existingBudgetLength * 34} 65% 50%`; // generate random color	
