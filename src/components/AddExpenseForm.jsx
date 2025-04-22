@@ -7,7 +7,7 @@ import { useFetcher } from "react-router-dom"
 // library imports
 import { PlusCircleIcon } from "@heroicons/react/16/solid"
 
-const AddExpenseForm = () => {
+const AddExpenseForm = ({ budgets }) => {
     const fetcher = useFetcher() //  hook that allows you to fetch data from the server without reloading the page. used to create a new budget.    
     const isSubmitting = fetcher.state === "submitting" // check if the form is submitting
 

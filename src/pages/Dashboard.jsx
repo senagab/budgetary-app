@@ -50,13 +50,13 @@ export async function dashboardAction({request}){
         }
     }
 
-    if (_action  === "createExpense") {  
+    if (_action === "createExpense") {  
         try {
             // create expense
             createExpense({
                 name: values.newExpense,
                 amount: values.newExpenseAmount,
-                budgetId: values.newExpenseBudget
+                budgetId: values.budgetId
             })
             return toast.success(`expense ${values.newExpense} created!`)
         } catch (e) {
