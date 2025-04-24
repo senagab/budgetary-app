@@ -18,8 +18,7 @@ const Table = ({ expenses }) => {
                     {
                         expenses.map((expense) => (
                             <tr key={expense.id}>
-                                {expense.name}
-                                <ExpenseItem />
+                                <ExpenseItem expense={expense} />
                             </tr>
                         ))
                     }

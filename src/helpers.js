@@ -70,7 +70,7 @@ export const formatPercentage = (amt) => {
     })
 }
 
-
+export const formatDateToLocaleString = (epoch) => new Date(epoch).toLocaleDateString();
 
 // format currency
 export const formatCurrency = (amt) => {

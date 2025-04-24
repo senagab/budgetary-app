@@ -1,6 +1,13 @@
-const ExpenseItem = () => {
+// helper imports
+import { formatCurrency, formatDateToLocaleString } from "../helpers"
+
+const ExpenseItem = ({ expense }) => {
     return (
-        <div>teste</div>
+        <>
+            <td>{expense.name}</td>
+            <td>{formatCurrency(expense.amount)}</td>
+            <td>{formatDateToLocaleString(expense.createdAt)}</td>
+        </>
     )
 }
 
