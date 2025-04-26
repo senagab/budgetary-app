@@ -10,13 +10,13 @@ import { deleteItem } from "../helpers";
 export async function logoutAction() {
     // delete the user
     deleteItem({
-        key: "userName",
+        key: "userName", // deletes user when logging out
     })
     deleteItem({
-        key: "budgets",
+        key: "budgets", // deletes remaining budgets when logging out
     })
     deleteItem({
-        key: "expenses",
+        key: "expenses", // deletes user when logging out
     })
 
     toast.success("Logout successful", {
