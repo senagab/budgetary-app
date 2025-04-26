@@ -1,4 +1,4 @@
-export const waait = () => new Promise(res => setTimeout(res, Math.random() * 2000)) // helper function to simulate a delay
+export const waait = () => new Promise(res => setTimeout(res, Math.random() * 800)) // helper function to simulate a delay
 
 // colors
 const generateRandomColor = () => {
