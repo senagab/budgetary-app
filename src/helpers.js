@@ -24,7 +24,12 @@ export const createBudget = ({
     }
 
     const existingBudgets = fetchData("budgets") ?? []; // get existing budgets or empty array
-    return localStorage.setItem("budgets", JSON.stringify([...existingBudgets, newItem])) // set the budgets in local storage
+    return localStorage.setItem(
+        "budgets", 
+        JSON.stringify(
+            [...existingBudgets, newItem]
+        )
+    ) // set the budgets in local storage
 }
 
 // create expense
@@ -40,7 +45,12 @@ export const createExpense = ({
     }
 
     const existingExpenses = fetchData("expenses") ?? []; // get existing Expenses or empty array
-    return localStorage.setItem("expenses", JSON.stringify([...existingExpenses, newItem])) // set the budgets in local storage
+    return localStorage.setItem(
+        "expenses", 
+        JSON.stringify(
+            [...existingExpenses, newItem]
+        )
+    ) // set the budgets in local storage
 }
 
 // delete item
