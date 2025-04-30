@@ -14,7 +14,7 @@ export function expensesLoader() { // helper function fetches data
 }
 
 const ExpensesPage = () => {
-    const { expenses } = useLoaderData
+    const { expenses } = useLoaderData();
 
     return (
         <div className="grid-lg">
@@ -27,7 +27,7 @@ const ExpensesPage = () => {
                                 ({expenses.length} total)
                             </small> 
                         </h2>
-                        <Table expenses={expenses} /> // Table component to display expenses
+                        <Table expenses={expenses} />
                     </div>
                 ) :
                 (
