@@ -1,9 +1,12 @@
 // helper imports
-import { formatCurrency, formatDateToLocaleString } from "../helpers"
+import { formatCurrency, 
+    formatDateToLocaleString, 
+    getAllMatchingItems 
+} from "../helpers"
 
 const ExpenseItem = ({ expense }) => {
 
-    const budget = getAllMatchingItem({
+    const budget = getAllMatchingItems({
         category: "budgets",
         key: "id",
         value: expense.budgetId
