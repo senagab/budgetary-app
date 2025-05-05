@@ -8,7 +8,7 @@ import { TrashIcon } from "@heroicons/react/16/solid";
 import { 
     formatCurrency, 
     formatDateToLocaleString, 
-    getAllMatchingItems 
+    getAllMatchingItems,
 } from "../helpers"
 
 
@@ -27,7 +27,7 @@ const ExpenseItem = ({ expense }) => {
             <td>{expense.name}</td>
             <td>{formatCurrency(expense.amount)}</td>
             <td>{formatDateToLocaleString(expense.createdAt)}</td>
-            <td>
+            {/* <td>
                 <Link
                 to={`/budget/${budget.id}`}
                 style={{
@@ -36,16 +36,16 @@ const ExpenseItem = ({ expense }) => {
                 >
                     {budget.name}
                 </Link>
-            </td>
+            </td> */}
             <td>
-                <fetcher.Form method="post" action="/expenses/destroy">
+                <fetcher.Form method="post">
                     <input type="hidden" name="_action" value="deleteExpense" />
                     <input type="hidden" name="expenseId" value={expense.id} />
                     <button 
                     type="submit"
                     className="btn btn--warning"
-                    aria-label={`Delete ${expense.name} expense`}>
-                        <span className="material-symbols-outlined">delete</span>
+                    aria-label={`Delete ${expense.name} expense`}
+                    >
                         <TrashIcon width={20} />
                     </button>
                 </fetcher.Form>

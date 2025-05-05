@@ -67,6 +67,7 @@ export const deleteItem = ({key}) => {
 // total spent by budget
 export const calculateSpentByBudget = (budgetId) => {
     const expenses = fetchData("expenses") ?? []; // get existing expenses or empty array
+    console.log("Expenses:", expenses);
     const budgetSpent = expenses.reduce((acc, expense) => {
         // check if the expense.id === budgetId i passed in 
         if (expense.budgetId !== budgetId) return acc
