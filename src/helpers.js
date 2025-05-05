@@ -12,9 +12,9 @@ export const fetchData = (key) => {
 };
 
 // Get all items from Local Storage
-export const getAllMatchingItems = ({category, key, value}) => {
+export const getAllMatchingItems = ({ category, key, value }) => {
     const data = fetchData(category) ?? [];
-    return data.filter((item) = item[key] === value); // filter the data by key and value
+    return data.filter((item) => item[key] === value); // filter the data by key and value
 }
 
 // create budget
