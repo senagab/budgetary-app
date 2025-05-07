@@ -27,7 +27,7 @@ const ExpenseItem = ({ expense }) => {
             <td>{expense.name}</td>
             <td>{formatCurrency(expense.amount)}</td>
             <td>{formatDateToLocaleString(expense.createdAt)}</td>
-            {/* <td>
+            <td>
                 <Link
                 to={`/budget/${budget.id}`}
                 style={{
@@ -36,7 +36,7 @@ const ExpenseItem = ({ expense }) => {
                 >
                     {budget.name}
                 </Link>
-            </td> */}
+            </td>
             <td>
                 <fetcher.Form method="post">
                     <input type="hidden" name="_action" value="deleteExpense" />

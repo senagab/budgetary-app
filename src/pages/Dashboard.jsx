@@ -59,7 +59,7 @@ export async function dashboardAction({request}){
             createExpense({
                 name: values.newExpense,
                 amount: values.newExpenseAmount,
-                budgetId: values.budgetId
+                budgetId: values.newExpenseBudget
             })
             return toast.success(`expense ${values.newExpense} created!`)
         } catch (e) {
