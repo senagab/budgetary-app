@@ -66,6 +66,20 @@ export async function dashboardAction({request}){
             throw new Error("There was a problem creating your expense.")
         }
     }
+
+    if (_action === "deleteExpense") {  
+        try {
+            // delete expense
+            deleteExpense({
+                name: values.newExpense,
+                amount: values.newExpenseAmount,
+                budgetId: values.newExpenseBudget
+            })
+            return toast.success("expense deleted!")
+        } catch (e) {
+            throw new Error("There was a problem deleting your expense.")
+        }
+    }
 }
 
 const Dashboard = () => {
