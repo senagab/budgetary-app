@@ -2,7 +2,7 @@
 import { Form } from "react-router-dom";
 
 // library imports
-import { UserPlusIcon } from "@heroicons/react/16/solid";
+import { UserPlusIcon } from "@heroicons/react/24/solid";
 
 // assets
 import illustration from "../assets/illustration.jpg";

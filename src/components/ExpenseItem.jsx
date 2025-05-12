@@ -2,7 +2,7 @@
 import { Link, useFetcher } from "react-router-dom";
 
 // library imports
-import { TrashIcon } from "@heroicons/react/16/solid";
+import { TrashIcon } from "@heroicons/react/24/solid";
 
 // helper imports
 import { 

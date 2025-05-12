@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 import { Form, useFetcher } from "react-router-dom"
 
 // library imports
-import { CurrencyDollarIcon } from "@heroicons/react/16/solid"
+import { CurrencyDollarIcon } from "@heroicons/react/24/solid"
 
 const AddBudgetForm = () => {
     const fetcher = useFetcher() //  hook that allows you to fetch data from the server without reloading the page. used to create a new budget.
