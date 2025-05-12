@@ -12,7 +12,7 @@ import BudgetItem from "../components/BudgetItem";
 import Table from "../components/Table";
 
 // helper functions
-import { createBudget, createExpense, fetchData, waait } from "../helpers"
+import { createBudget, createExpense, deleteItem, fetchData, waait } from "../helpers"
 
 // loader
 export function dashboardLoader() { // helper function fetches data
@@ -70,10 +70,9 @@ export async function dashboardAction({request}){
     if (_action === "deleteExpense") {  
         try {
             // delete expense
-            deleteExpense({
-                name: values.newExpense,
-                amount: values.newExpenseAmount,
-                budgetId: values.newExpenseBudget
+            deleteItem({
+                key: "expenses",
+                id: values.expenseId
             })
             return toast.success("expense deleted!")
         } catch (e) {
