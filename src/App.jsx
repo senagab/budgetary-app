@@ -20,6 +20,7 @@ import ExpensesPage, {
   expensesAction, 
   expensesLoader 
 } from "./pages/ExpensesPage";
+import BudgetPage, { budgetLoader } from "./pages/BudgetPage";
 
 const router = createBrowserRouter([
   {
@@ -34,6 +35,13 @@ const router = createBrowserRouter([
         loader: dashboardLoader, // load this data - from the function dashboardLoader()
         action: dashboardAction, // action on actions/dashboard.js
         errorElement: <Error />
+      },
+      {
+        path: "budget/:id", //  same as path: "/"
+        element: <BudgetPage />, // this element will be shown
+        loader: budgetLoader,
+        // action: expensesAction, // action on actions/expenses.js
+        errorElement: <Error />,
       },
       {
         path: "expenses", //  same as path: "/"

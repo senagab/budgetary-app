@@ -127,7 +127,9 @@ const Dashboard = () => {
                                         ) 
                                         : (
                                             <div className="div">
-                                                oi
+                                                <p>
+                                                    no expenses found
+                                                </p>
                                             </div>
                                         )
                                     }
