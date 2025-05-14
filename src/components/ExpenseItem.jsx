@@ -12,7 +12,7 @@ import {
 } from "../helpers"
 
 
-const ExpenseItem = ({ expense }) => {
+const ExpenseItem = ({ expense, showBudget }) => {
     const fetcher = useFetcher() // get the fetcher object from react router dom
 
     const budget = getAllMatchingItems({
@@ -28,14 +28,18 @@ const ExpenseItem = ({ expense }) => {
             <td>{formatCurrency(expense.amount)}</td>
             <td>{formatDateToLocaleString(expense.createdAt)}</td>
             <td>
-                <Link
-                to={`/budget/${budget.id}`}
-                style={{
-                    "--accent": budget.color,
-                }}
-                >
-                    {budget.name}
-                </Link>
+                {
+                    showBudget && (
+                        <Link
+                        to={`/budget/${budget.id}`}
+                        style={{
+                            "--accent": budget.color,
+                        }}
+                        >
+                            {budget.name}
+                        </Link>
+                    )
+                }
             </td>
             <td>
                 <fetcher.Form method="post">

@@ -34,9 +34,12 @@ const BudgetPage = () => {
     const { budget, expenses } = useLoaderData() // get the budget from the loader
 
     return (
-        <div className="grid-lg">
+        <div className="grid-lg"
+        style={{
+            "--accent": budget.color,
+        }}>
             <h1 className="h2">
-                <span className="accent">{budget.name}</span>
+                <span className="accent">{budget.name} </span>
                 Overview
             </h1>
             <div className="flex-lg">
@@ -46,10 +49,10 @@ const BudgetPage = () => {
             {expenses && expenses.length > 0 ? (
                 <div className="grid-md">
                     <h2>
-                        <span className="accent">{budget.name}</span> 
+                        <span className="accent">{budget.name} </span> 
                         Expenses
                     </h2>
-                    <Table expenses={expenses} />
+                    <Table expenses={expenses} showBudgets={false} />
                 </div>
             ) : (
                 <div>
