@@ -1,8 +1,11 @@
 // react router dom imports
 import { useLoaderData } from "react-router-dom"
 
+// library
+import { toast } from "react-toastify"
+
 // helpers
-import { getAllMatchingItems } from "../helpers"
+import { deleteItem, getAllMatchingItems } from "../helpers"
 
 // components
 import BudgetItem from "../components/BudgetItem"
@@ -29,6 +32,28 @@ export async function budgetLoader({params}) {
 
     return { budget, expenses }
 }
+
+
+// action
+export async function budgetAction({request}) {
+    
+    const data = await request.formData();
+    const {_action, ...values} = Object.fromEntries(data)
+
+    if (_action === "deleteExpense") {  
+        try {
+            // delete expense
+            deleteItem({
+                key: "expenses",
+                id: values.expenseId
+            })
+            return toast.success("expense deleted!")
+        } catch (e) {
+            throw new Error("There was a problem deleting your expense.")
+        }
+    }
+}
+
 
 const BudgetPage = () => {
     const { budget, expenses } = useLoaderData() // get the budget from the loader
