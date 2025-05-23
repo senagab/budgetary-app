@@ -95,7 +95,7 @@ const BudgetPage = () => {
                 </div>
             ) : (
                 <div>
-                    nao encontrado
+                    not found.
                 </div>
             )}
         </div>
