@@ -31,14 +31,21 @@ const BudgetItem = ({budget, showDelete = false}) => {
             </div>
             {
                 showDelete ? (
-                    <Form>
-                        <p>delete button is visible</p>
-                    </Form>
+                    <div className="flex-sm">
+                        <Form>
+                            <p>delete button is visible</p>
+                        </Form>
+                    </div>
                 ) : (
-                    <Link>
-                        <span>View Details</span>
-                        <BanknotesIcon width={20} />
-                    </Link>
+                    <div className="flex-sm">
+                        <Link
+                        to={`/budget/${id}`}
+                        className="btn"
+                        >
+                            <span>View Details</span>
+                            <BanknotesIcon width={20} />
+                        </Link>
+                    </div>
                 )
             }
         </div>
